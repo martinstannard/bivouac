@@ -55,7 +55,7 @@ touch #{site.directory}/tmp/restart.txt;
 
   def cat_key(site)
     File.open("#{ENV['HOME']}/.ssh/authorized_keys2", 'a') do |f|
-      f << site.ssh_public_key
+      f << site.ssh_public_key << "\n"
     end
   end
 
