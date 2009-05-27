@@ -28,16 +28,18 @@ helpers do
 #!/bin/sh
 cd #{site.directory};
 git reset --hard;
+# install any gems required
+if [ -f geminstaller.yml ] || [ -f config/geminstaller.yml ]
+  geminstaller
+fi
 # run initial_deploy_hook here unless /tmp/deployed exists
 # initial_deploy should be created in site.directory/deploy-hooks
 
-if [ -x deploy-hooks/initial-deploy -a -f tmp/never-deployed ]
+if [ -x deploy-hooks/initial-deploy ] && [ -f tmp/never-deployed ]
 then
   deploy-hooks/initial-deploy;
   rm #{site.directory}/tmp/never-deployed;
 fi
-
-# config_gem file should be in site.directory/deploy-hooks
 
 # post_deploy_hook should be created in site.directory/deploy
 
@@ -65,6 +67,13 @@ touch #{site.directory}/tmp/restart.txt;
 
   def authorize(login, password)
     login == "bivvy" && password == "whackers"
+  end
+
+  # this uses the gemtools gem to install any gems
+  def install_gems
+    Dir.chdir site.directory
+    `geminstaller`
+    Dir.chdir current_dir
   end
 
 end

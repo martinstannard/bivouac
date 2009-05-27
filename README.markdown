@@ -11,6 +11,7 @@ TODO: provide more explanation.
 ## Requirements
 
 * sinatra
+* sinatra-authorization
 * mysql
 * nginx
 * phusion passenger
