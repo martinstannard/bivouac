@@ -18,7 +18,21 @@ TODO: provide more explanation.
 
 ## Installation
 
+You'll need passenger installed:
+
+> sudo gem install passenger
+
+> sudo passenger-install-nginx-module
+
+on osx : http://gist.github.com/123408
+
 ## Configuration
+
+Added configration to nginx.conf files so it knows where to serve from:
+
+ Ben's nginx scripts
+
+## Running bivou.ac
 
 ## Gem Support
 
