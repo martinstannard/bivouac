@@ -6,7 +6,7 @@ Bivouac works by creating a git repository for a given app name in a subdomain o
 
 Born on 17 May, 2009 at Railscamp 5 in the Gold Coast Hinterland of Queensland, Australia via a collaboration between Martin Stannard, Michael Koukoullis and Keith Pitty with valued assistance from Phil Oye, Myles Byrne and Tim Lucas.
 
-TODO: provide more explanation.
+See it running at http://bivou.ac
 
 ## Requirements
 
